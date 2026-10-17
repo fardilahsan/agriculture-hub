@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Expert Consultation - AgriHub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-agri-dark py-3">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <i class="bi bi-flower1 fs-3 text-warning"></i>
+          <span>AgriHub</span>
+        </a>
+        <div class="d-none d-lg-block text-white-50 small ms-3">
+          <i class="bi bi-clock me-1"></i>
+          <span id="currentTimeBadge" class="badge bg-agri-forest text-light">Loading...</span>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="guides.html">Farming Guides</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="crops.html">Crop Details</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pests.html">Pest Control</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="contact.html">Contact & Extension</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-header text-center">
+      <div class="container">
+        <h1 class="display-5 fw-bold mb-2">Extension Services & Consultation</h1>
+        <p class="lead mb-0 text-white-50">Connect directly with regional agronomists, crop scientists, and emergency pest diagnosis teams.</p>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-7">
+            <div class="card p-4 shadow-sm border-0">
+              <h3 class="fw-bold text-agri-dark mb-2">Agronomic Inquiry Form</h3>
+              <p class="text-secondary small mb-4">Submit field queries or upload photographic evidence of leaf lesions, stems, or pests for swift laboratory diagnosis.</p>
+
+              <div id="formSuccessMessage" class="alert alert-success d-none mb-4" role="alert">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-check-circle-fill fs-3 me-3 text-success"></i>
+                  <div>
+                    <h5 class="alert-heading fw-bold mb-1">Inquiry Submitted Successfully!</h5>
+                    <p class="mb-0 small">An agricultural extension agent has been assigned to your ticket. A detailed diagnostic report will be dispatched to your email within 24 hours.</p>
+                  </div>
+                </div>
+              </div>
+
+              <form id="agriInquiryForm" novalidate>
+                <div class="mb-3">
+                  <label for="fullName" class="form-label fw-bold small text-agri-dark">Full Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="fullName" placeholder="e.g. John Doe" required>
+                  <div class="invalid-feedback">Please provide your full name (minimum 2 characters).</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="emailAddress" class="form-label fw-bold small text-agri-dark">Email Address <span class="text-danger">*</span></label>
+                  <input type="email" class="form-control" id="emailAddress" placeholder="e.g. grower@example.com" required>
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="inquirySubject" class="form-label fw-bold small text-agri-dark">Inquiry Subject / Crop Category <span class="text-danger">*</span></label>
+                  <select class="form-select" id="inquirySubject" required>
+                    <option value="" selected disabled>Select an inquiry area...</option>
+                    <option value="pest-infestation">Pest & Insect Outbreak Identification</option>
+                    <option value="fungal-disease">Foliage Disease / Mildew / Rot Diagnosis</option>
+                    <option value="nutrient-deficiency">Soil Health & Nutrient Deficiency (NPK / Micronutrients)</option>
+                    <option value="irrigation-setup">Drip & Irrigation Calibration</option>
+                    <option value="seed-variety">Certified Seed & Varietal Recommendation</option>
+                    <option value="other">General Commercial Agronomy</option>
+                  </select>
+                  <div class="invalid-feedback">Please select a topic area for your inquiry.</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="cropImageFile" class="form-label fw-bold small text-agri-dark">Optional Specimen / Leaf Photo</label>
+                  <input class="form-control" type="file" id="cropImageFile" accept="image/*">
+                  <div class="form-text small">Upload clear photos of affected leaves, stems, or pests for accurate laboratory diagnosis (JPG, PNG).</div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="inquiryMessage" class="form-label fw-bold small text-agri-dark">Inquiry Details & Symptoms <span class="text-danger">*</span></label>
+                  <textarea class="form-control" id="inquiryMessage" rows="5" placeholder="Detail observed symptoms, crop age, soil type, and any recent foliar treatments applied..." required></textarea>
+                  <div class="invalid-feedback">Please explain your inquiry in detail (minimum 10 characters).</div>
+                </div>
+
+                <button type="submit" class="btn btn-agri btn-lg w-100 fw-bold">
+                  <i class="bi bi-send me-1"></i> Submit Inquiry to Extension Services
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="card p-4 shadow-sm border-0 bg-agri-cream mb-4">
+              <h4 class="fw-bold text-agri-dark mb-3"><i class="bi bi-headset me-2 text-agri-forest"></i> Extension Support Services</h4>
+              <p class="text-secondary small mb-3">Reach field agronomists and regional officers directly for real-time urgent crop advisories and localized weather alerts.</p>
+              
+              <ul class="list-unstyled mb-0 small">
+                <li class="mb-3 d-flex align-items-start">
+                  <i class="bi bi-geo-alt-fill text-agri-forest fs-5 me-3"></i>
+                  <div>
+                    <strong>Central Agro-Science Bureau:</strong><br>
+                    Plot 48, Agricultural Research Corridor, Sector 12, Agro City
+                  </div>
+                </li>
+                <li class="mb-3 d-flex align-items-start">
+                  <i class="bi bi-telephone-inbound-fill text-danger fs-5 me-3"></i>
+                  <div>
+                    <strong>Emergency Pest Hotline (Toll-Free):</strong><br>
+                    <span class="fw-bold fs-6 text-danger">1800-419-AGRI (2474)</span><br>
+                    <span class="text-muted small">24/7 Rapid response for active locust or armyworm swarms</span>
+                  </div>
+                </li>
+                <li class="mb-3 d-flex align-items-start">
+                  <i class="bi bi-envelope-at-fill text-agri-forest fs-5 me-3"></i>
+                  <div>
+                    <strong>Direct Extension Email:</strong><br>
+                    consultation@agrihub-portal.org
+                  </div>
+                </li>
+                <li class="d-flex align-items-start">
+                  <i class="bi bi-clock-fill text-agri-forest fs-5 me-3"></i>
+                  <div>
+                    <strong>Operational Hours:</strong><br>
+                    Monday – Friday: 07:30 AM – 06:00 PM<br>
+                    Saturday: 08:00 AM – 02:00 PM (Emergency Desk only on Sundays)
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="card p-4 shadow-sm border-0 bg-white">
+              <h5 class="fw-bold text-agri-dark mb-2"><i class="bi bi-patch-check-fill text-success me-2"></i> Quality Assurance</h5>
+              <p class="small text-secondary mb-0">All agronomic protocols and diagnostic recommendations delivered by AgriHub comply strictly with National Sustainable Agriculture Guidelines and Integrated Pest Management standards.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-4 border-top">
+    <div class="container text-center">
+      <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+        <i class="bi bi-flower1 fs-4 text-warning"></i>
+        <span class="fw-bold fs-5 text-white">AgriHub</span>
+      </div>
+      <p class="text-white-50 small mb-3">Empowering sustainable agricultural communities through accessible agronomic intelligence, verified field guides, and integrated crop protection systems.</p>
+      <div class="d-flex justify-content-center gap-3 small mb-3">
+        <a href="index.html">Home</a>
+        <span class="text-white-50">|</span>
+        <a href="guides.html">Farming Guides</a>
+        <span class="text-white-50">|</span>
+        <a href="crops.html">Crop Details</a>
+        <span class="text-white-50">|</span>
+        <a href="pests.html">Pest Strategies</a>
+        <span class="text-white-50">|</span>
+        <a href="contact.html">Consultation</a>
+      </div>
+      <p class="text-white-50 small mb-0">&copy; 2026 AgriHub - Agricultural Information Hub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

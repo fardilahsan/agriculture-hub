@@ -1,0 +1,190 @@
+:root {
+  --agri-dark-green: #1b4332;
+  --agri-forest-green: #2d6a4f;
+  --agri-leaf: #40916c;
+  --agri-sage: #74c69d;
+  --agri-mint: #d8f3dc;
+  --agri-earth: #8c6239;
+  --agri-clay: #b08968;
+  --agri-sand: #e6ccb2;
+  --agri-offwhite: #f8f9fa;
+  --agri-cream: #faf8f5;
+  --agri-text: #212529;
+  --agri-muted: #5c677d;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--agri-text);
+  background-color: var(--agri-cream);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.bg-agri-dark {
+  background-color: var(--agri-dark-green) !important;
+}
+
+.bg-agri-forest {
+  background-color: var(--agri-forest-green) !important;
+}
+
+.bg-agri-mint {
+  background-color: var(--agri-mint) !important;
+}
+
+.bg-agri-cream {
+  background-color: var(--agri-cream) !important;
+}
+
+.text-agri-dark {
+  color: var(--agri-dark-green) !important;
+}
+
+.text-agri-forest {
+  color: var(--agri-forest-green) !important;
+}
+
+.text-agri-earth {
+  color: var(--agri-earth) !important;
+}
+
+.btn-agri {
+  background-color: var(--agri-forest-green);
+  color: #ffffff;
+  border: 1px solid var(--agri-forest-green);
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-agri:hover,
+.btn-agri:focus {
+  background-color: var(--agri-dark-green);
+  border-color: var(--agri-dark-green);
+  color: #ffffff;
+}
+
+.btn-outline-agri {
+  color: var(--agri-forest-green);
+  border: 1px solid var(--agri-forest-green);
+  background-color: transparent;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-outline-agri:hover,
+.btn-outline-agri:focus {
+  background-color: var(--agri-forest-green);
+  color: #ffffff;
+}
+
+.btn-earth {
+  background-color: var(--agri-earth);
+  color: #ffffff;
+  border: 1px solid var(--agri-earth);
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-earth:hover,
+.btn-earth:focus {
+  background-color: #6b4b2a;
+  border-color: #6b4b2a;
+  color: #ffffff;
+}
+
+.hero-section {
+  background: linear-gradient(rgba(27, 67, 50, 0.85), rgba(45, 106, 79, 0.78)),
+    url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  color: #ffffff;
+  padding: 5rem 0;
+}
+
+.page-header {
+  background: linear-gradient(rgba(27, 67, 50, 0.9), rgba(45, 106, 79, 0.85)),
+    url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  color: #ffffff;
+  padding: 3.5rem 0;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: #e2e8f0;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+  color: #ffffff !important;
+}
+
+.nav-link.active {
+  border-bottom: 2px solid var(--agri-sage);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.badge-agri-season {
+  background-color: #fef3c7;
+  color: #92400e;
+  font-weight: 600;
+}
+
+.badge-agri-method {
+  background-color: var(--agri-mint);
+  color: var(--agri-dark-green);
+  font-weight: 600;
+}
+
+.badge-agri-type {
+  background-color: #e0e7ff;
+  color: #3730a3;
+  font-weight: 600;
+}
+
+.filter-btn.active {
+  background-color: var(--agri-forest-green);
+  color: #ffffff;
+  border-color: var(--agri-forest-green);
+}
+
+.checklist-icon {
+  color: var(--agri-leaf);
+  font-size: 1.15rem;
+  margin-right: 0.5rem;
+}
+
+footer {
+  background-color: var(--agri-dark-green);
+  color: #e2e8f0;
+  margin-top: auto;
+}
+
+footer a {
+  color: var(--agri-sage);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}

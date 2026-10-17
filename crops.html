@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crop Details - AgriHub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-agri-dark py-3">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <i class="bi bi-flower1 fs-3 text-warning"></i>
+          <span>AgriHub</span>
+        </a>
+        <div class="d-none d-lg-block text-white-50 small ms-3">
+          <i class="bi bi-clock me-1"></i>
+          <span id="currentTimeBadge" class="badge bg-agri-forest text-light">Loading...</span>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="guides.html">Farming Guides</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="crops.html">Crop Details</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pests.html">Pest Control</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact & Extension</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-header text-center">
+      <div class="container">
+        <h1 class="display-5 fw-bold mb-2">Crop Profiles & Agronomy Database</h1>
+        <p class="lead mb-0 text-white-50">Detailed cultivation guidelines, soil metrics, suitable varieties, and harvest indicators across core agricultural categories.</p>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <ul class="nav nav-pills justify-content-center mb-5 gap-2" id="cropTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active btn-outline-agri px-4 py-2 fw-bold" id="grains-tab" data-bs-toggle="pill" data-bs-target="#grains-pane" type="button" role="tab" aria-controls="grains-pane" aria-selected="true">
+              <i class="bi bi-water me-1"></i> Grains
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link btn-outline-agri px-4 py-2 fw-bold" id="vegetables-tab" data-bs-toggle="pill" data-bs-target="#vegetables-pane" type="button" role="tab" aria-controls="vegetables-pane" aria-selected="false">
+              <i class="bi bi-basket me-1"></i> Vegetables
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link btn-outline-agri px-4 py-2 fw-bold" id="fruits-tab" data-bs-toggle="pill" data-bs-target="#fruits-pane" type="button" role="tab" aria-controls="fruits-pane" aria-selected="false">
+              <i class="bi bi-apple me-1"></i> Fruits
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link btn-outline-agri px-4 py-2 fw-bold" id="cashcrops-tab" data-bs-toggle="pill" data-bs-target="#cashcrops-pane" type="button" role="tab" aria-controls="cashcrops-pane" aria-selected="false">
+              <i class="bi bi-cash-stack me-1"></i> Cash Crops
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="cropTabsContent">
+          <div class="tab-pane fade show active" id="grains-pane" role="tabpanel" aria-labelledby="grains-tab">
+            <div class="row g-4">
+              <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm">
+                  <img src="https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Rice Paddy">
+                  <div class="card-body d-flex flex-column">
+                    <h4 class="card-title fw-bold text-agri-dark">Paddy / Rice (Oryza sativa)</h4>
+                    <span class="badge bg-success-subtle text-success-emphasis align-self-start mb-2">Major Cereal Staple</span>
+                    <p class="text-secondary small">Thrives in warm, humid tropical and subtropical climates with abundant standing water or managed saturation.</p>
+                    <ul class="list-unstyled small text-secondary flex-grow-1">
+                      <li class="mb-1"><strong>Varieties:</strong> Basmati-370, IR-64, Swarna, Jasmine, Samba Mahsuri</li>
+                      <li class="mb-1"><strong>Soil & pH:</strong> Clay or clayey-loam; pH 5.5 - 6.5 (low permeability)</li>
+                      <li class="mb-1"><strong>Timeline:</strong> Kharif season (June - November); 110-150 days maturity</li>
+                      <li class="mb-1"><strong>Harvest:</strong> When 80-85% grains turn golden yellow; moisture around 20%</li>
+                    </ul>
+                    <button class="btn btn-sm btn-outline-agri mt-2" data-bs-toggle="modal" data-bs-target="#riceModal">View Complete Profile</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm">
+                  <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Wheat Stalks">
+                  <div class="card-body d-flex flex-column">
+                    <h4 class="card-title fw-bold text-agri-dark">Wheat (Triticum aestivum)</h4>
+                    <span class="badge bg-success-subtle text-success-emphasis align-self-start mb-2">Cool Season Cereal</span>
+                    <p class="text-secondary small">Essential rabi grain requiring cool days during vegetative growth and warm conditions during grain ripening.</p>
+                    <ul class="list-unstyled small text-secondary flex-grow-1">
+                      <li class="mb-1"><strong>Varieties:</strong> HD-2967, PBW-343, Sharbati, DBW-187, Kalyansona</li>
+                      <li class="mb-1"><strong>Soil & pH:</strong> Well-drained fertile loam; pH 6.0 - 7.5</li>
+                      <li class="mb-1"><strong>Timeline:</strong> Rabi season (November - April); 120-140 days maturity</li>
+                      <li class="mb-1"><strong>Harvest:</strong> Grain moisture below 14% to ensure safe post-harvest storage</li>
+                    </ul>
+                    <button class="btn btn-sm btn-outline-agri mt-2" data-bs-toggle="modal" data-bs-target="#wheatModal">View Complete Profile</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm">
+                  <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Maize Corn Field">
+                  <div class="card-body d-flex flex-column">
+                    <h4 class="card-title fw-bold text-agri-dark">Maize / Corn (Zea mays)</h4>
+                    <span class="badge bg-success-subtle text-success-emphasis align-self-start mb-2">High-Yield C4 Grain</span>
+                    <p class="text-secondary small">Versatile cereal adaptable across wide temperature ranges, used widely for food, feed, and starch industries.</p>
+                    <ul class="list-unstyled small text-secondary flex-grow-1">
+                      <li class="mb-1"><strong>Varieties:</strong> Pioneer 3396, Ganga-5, Deccan-103, Sweet Corn Sugar-75</li>
+                      <li class="mb-1"><strong>Soil & pH:</strong> Deep, well-aerated sandy loam to silt loam; pH 5.8 - 7.0</li>
+                      <li class="mb-1"><strong>Timeline:</strong> Kharif or Spring; 90-110 days duration</li>
+                      <li class="mb-1"><strong>Harvest:</strong> When husk leaves dry and black layer forms at grain kernel base</li>
+                    </ul>
+                    <button class="btn btn-sm btn-outline-agri mt-2" data-bs-toggle="modal" data-bs-target="#maizeModal">View Complete Profile</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="vegetables-pane" role="tabpanel" aria-labelledby="vegetables-tab">
+            <div class="row g-4">
+              <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm">
+                  <img src="https://images.unsplash.com/photo-1592417817098-8f3d6910985b?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Tomatoes">
+                  <div class="card-body d-flex flex-column">
+                    <h4 class="card-title fw-bold text-agri-dark">Tomato (Solanum lycopersicum)</h4>
+                    <span class="badge bg-warning-subtle text-warning-emphasis align-self-start mb-2">Solanaceous Vegetable</span>
+                    <p class="text-secondary small">High-value commercial horticultural crop demanding consistent sunlight and careful blight management.</p>
+                    <ul class="list-unstyled small text-secondary flex-grow-1">
+                      <li class="mb-1"><strong>Varieties:</strong> Arka Rakshak, Pusa Ruby, Roma, San Marzano</li>
+                      <li class="mb-1"><strong>Soil & pH:</strong> Sandy loam rich in organic matter; pH 6.0 - 6.8</li>
+                      <li class="mb-1"><strong>Timeline:</strong> Spring/Autumn; 70-90 days after transplanting</li>
+                      <li class="mb-1"><strong>Harvest:</strong> Breaker stage for distant logistics; firm red for local markets</li>
+                    </ul>
+                    <button class="btn btn-sm btn-outline-agri mt-2" data-bs-toggle="modal" data-bs-target="#tomatoModal">View Complete Profile</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm">
+                  <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Potatoes in crate">
+                  <div class="card-body d-flex flex-column">
+                    <h4 class="card-title fw-bold text-agri-dark">Potato (Solanum tuberosum)</h4>
+                    <span class="badge bg-warning-subtle text-warning-emphasis align-self-start mb-2">Tuber Vegetable</span>
+                    <p class="text-secondary small">Cool-weather root tuber crop requiring loose earthen ridges for optimal stolon expansion.</p>
+                    <ul class="list-unstyled small text-secondary flex-grow-1">
+                      <li class="mb-1"><strong>Varieties:</strong> Kufri Jyoti, Kufri Pukhraj, Russet Burbank, Kennebec</li>
+                      <li class="mb-1"><strong>Soil & pH:</strong> Friable sandy loam; pH 5.2 - 6.4 (resists scab)</li>
+                      <li class="mb-1"><strong>Timeline:</strong> Winter/Rabi; 80-120 days from seed tubers</li>
+                      <li class="mb-1"><strong>Harvest:</strong> Dehaulming 10-14 days before harvest to firm tuber skins</li>
+                    </ul>
+                    <button class="btn btn-sm btn-outline-agri mt-2" data-bs-toggle="modal" data-bs-target="#potatoModal">View Complete Profile</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm">
+                  <img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Spinach and Leafy Greens">
+                  <div class="card-body d-flex flex-column">
+                    <h4 class="card-title fw-bold text-agri-dark">Leafy Greens / Spinach (Spinacia oleracea)</h4>
+                    <span class="badge bg-warning-subtle text-warning-emphasis align-self-start mb-2">Foliage Vegetable</span>
+                    <p class="text-secondary small">Rapid-cycle nutritional green loaded with iron and provitamin A, suitable for open fields and hydroponic trays.</p>
+                    <ul class="list-unstyled small text-secondary flex-grow-1">
+                      <li class="mb-1"><strong>Varieties:</strong> Pusa Bharati, All Green, Bloomsdale, Savoy</li>
+                      <li class="mb-1"><strong>Soil & pH:</strong> Nitrogen-rich loam with good drainage; pH 6.5 - 7.0</li>
+                      <li class="mb-1"><strong>Timeline:</strong> Year-round in temperate bands; 30-45 days duration</li>
+                      <li class="mb-1"><strong>Harvest:</strong> Cut-and-come-again harvesting early in cool mornings</li>
+                    </ul>
+                    <button class="btn btn-sm btn-outline-agri mt-2" data-bs-toggle="modal" data-bs-target="#spinachModal">View Complete Profile</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="fruits-pane" role="tabpanel" aria-labelledby="fruits-tab">
+            <div class="row g-4">
+              <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm">
+                  <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Mango Orchard">
+                  <div class="card-body d-flex flex-column">
+                    <h4 class="card-title fw-bold text-agri-dark">Mango (Mangifera indica)</h4>
+                    <span class="badge bg-info-subtle text-info-emphasis align-self-start mb-2">Perennial Tropical Fruit</span>
+                    <p class="text-secondary small">King of tropical fruits, requiring distinct dry spell for profuse floral induction followed by warm summers.</p>
+                    <ul class="list-unstyled small text-secondary flex-grow-1">
+                      <li class="mb-1"><strong>Varieties:</strong> Alphonso, Dasheri, Amrapali, Himsagar, Kesar</li>
+                      <li class="mb-1"><strong>Soil & pH:</strong> Deep alluvial loam with no hard pan; pH 5.5 - 7.5</li>
+                      <li class="mb-1"><strong>Timeline:</strong> Flowering in Jan-Feb; harvest May-July</li>
+                      <li class="mb-1"><strong>Harvest:</strong> Handpicked at physiological maturity with 1 cm pedicel stem</li>
+                    </ul>
+                    <button class="btn btn-sm btn-outline-agri mt-2" data-bs-toggle="modal" data-bs-target="#mangoModal">View Complete Profile</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm">
+                  <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Citrus Orange Trees">
+                  <div class="card-body d-flex flex-column">
+                    <h4 class="card-title fw-bold text-agri-dark">Citrus (Citrus reticulata / sinensis)</h4>
+                    <span class="badge bg-info-subtle text-info-emphasis align-self-start mb-2">Subtropical Evergreen</span>
+                    <p class="text-secondary small">Oranges, lemons, and mandarins with high market demand for fresh table juice and ascorbic acid content.</p>
+                    <ul class="list-unstyled small text-secondary flex-grow-1">
+                      <li class="mb-1"><strong>Varieties:</strong> Nagpur Mandarin, Valencia, Mosambi, Eureka Lemon</li>
+                      <li class="mb-1"><strong>Soil & pH:</strong> Light, well-aerated sandy loam; pH 6.0 - 7.5 (salinity intolerant)</li>
+                      <li class="mb-1"><strong>Timeline:</strong> 7-9 months from fruit set to harvest</li>
+                      <li class="mb-1"><strong>Harvest:</strong> Clipped using blunt clippers when rind achieves color break</li>
+                    </ul>
+                    <button class="btn btn-sm btn-outline-agri mt-2" data-bs-toggle="modal" data-bs-target="#citrusModal">View Complete Profile</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm">
+                  <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Bananas">
+                  <div class="card-body d-flex flex-column">
+                    <h4 class="card-title fw-bold text-agri-dark">Banana (Musa acuminata)</h4>
+                    <span class="badge bg-info-subtle text-info-emphasis align-self-start mb-2">Perennial Monocot Herb</span>
+                    <p class="text-secondary small">Heavy water- and potassium-feeder providing rapid return on capital under regular drip fertigation.</p>
+                    <ul class="list-unstyled small text-secondary flex-grow-1">
+                      <li class="mb-1"><strong>Varieties:</strong> Grand Naine, Robusta, Dwarf Cavendish, Red Banana</li>
+                      <li class="mb-1"><strong>Soil & pH:</strong> Rich loamy soil with continuous drainage; pH 6.0 - 7.5</li>
+                      <li class="mb-1"><strong>Timeline:</strong> 11-13 months from sucker planting to harvest</li>
+                      <li class="mb-1"><strong>Harvest:</strong> When top finger angles become round and ridge angles soften</li>
+                    </ul>
+                    <button class="btn btn-sm btn-outline-agri mt-2" data-bs-toggle="modal" data-bs-target="#bananaModal">View Complete Profile</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="cashcrops-pane" role="tabpanel" aria-labelledby="cashcrops-tab">
+            <div class="row g-4">
+              <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm">
+                  <img src="https://images.unsplash.com/photo-1606041008023-472dfb5e530f?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Cotton crop in field">
+                  <div class="card-body d-flex flex-column">
+                    <h4 class="card-title fw-bold text-agri-dark">Cotton (Gossypium hirsutum)</h4>
+                    <span class="badge bg-primary-subtle text-primary-emphasis align-self-start mb-2">Major Fiber Crop</span>
+                    <p class="text-secondary small">World's premiere natural textile fiber demanding high thermal units, warm weather, and frost-free periods.</p>
+                    <ul class="list-unstyled small text-secondary flex-grow-1">
+                      <li class="mb-1"><strong>Varieties:</strong> Bt Cotton hybrids (Bollgard II), Suvin, MCU-5</li>
+                      <li class="mb-1"><strong>Soil & pH:</strong> Deep black cotton soils (vertisols) or alluvial loam; pH 6.5 - 8.0</li>
+                      <li class="mb-1"><strong>Timeline:</strong> Kharif planting (May-June); 150-180 days maturity</li>
+                      <li class="mb-1"><strong>Harvest:</strong> Multiple manual pickings as bolls burst open cleanly in dry sun</li>
+                    </ul>
+                    <button class="btn btn-sm btn-outline-agri mt-2" data-bs-toggle="modal" data-bs-target="#cottonModal">View Complete Profile</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm">
+                  <img src="https://images.unsplash.com/photo-1527842891421-42eec6e703ea?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Jute and natural fibers">
+                  <div class="card-body d-flex flex-column">
+                    <h4 class="card-title fw-bold text-agri-dark">Jute (Corchorus olitorius / capsularis)</h4>
+                    <span class="badge bg-primary-subtle text-primary-emphasis align-self-start mb-2">Golden Bast Fiber</span>
+                    <p class="text-secondary small">Eco-friendly biodegradable packaging fiber grown in riverine delta basins with seasonal flooding.</p>
+                    <ul class="list-unstyled small text-secondary flex-grow-1">
+                      <li class="mb-1"><strong>Varieties:</strong> JRO-524 (Navin), JRO-204, JRC-321</li>
+                      <li class="mb-1"><strong>Soil & pH:</strong> Deltaic alluvial soils and silt deposits; pH 6.0 - 7.5</li>
+                      <li class="mb-1"><strong>Timeline:</strong> Pre-monsoon (March-May); harvested in 110-120 days</li>
+                      <li class="mb-1"><strong>Harvest:</strong> Small pod stage followed by ribbon retting in slow-moving water</li>
+                    </ul>
+                    <button class="btn btn-sm btn-outline-agri mt-2" data-bs-toggle="modal" data-bs-target="#juteModal">View Complete Profile</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm">
+                  <img src="https://images.unsplash.com/photo-1543884846-601264b3ef13?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Sugarcane crop">
+                  <div class="card-body d-flex flex-column">
+                    <h4 class="card-title fw-bold text-agri-dark">Sugarcane (Saccharum officinarum)</h4>
+                    <span class="badge bg-primary-subtle text-primary-emphasis align-self-start mb-2">Sugar & Biofuel Crop</span>
+                    <p class="text-secondary small">Long-duration perennial grass producing sucrose, molasses, and ethanol with high biomass output.</p>
+                    <ul class="list-unstyled small text-secondary flex-grow-1">
+                      <li class="mb-1"><strong>Varieties:</strong> Co-0238, Co-86032, CoJ-64, CoLk-94184</li>
+                      <li class="mb-1"><strong>Soil & pH:</strong> Deep, well-drained loams to clay loams; pH 6.5 - 7.5</li>
+                      <li class="mb-1"><strong>Timeline:</strong> 10-14 months (autumn or spring planted setts)</li>
+                      <li class="mb-1"><strong>Harvest:</strong> Cut close to ground level when brix refractometer measures 18-20%</li>
+                    </ul>
+                    <button class="btn btn-sm btn-outline-agri mt-2" data-bs-toggle="modal" data-bs-target="#sugarcaneModal">View Complete Profile</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modals for Detailed Crop Profiles -->
+    <div class="modal fade" id="riceModal" tabindex="-1" aria-labelledby="riceModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-agri-dark text-white">
+            <h5 class="modal-title fw-bold" id="riceModalLabel"><i class="bi bi-info-circle me-2"></i> Rice Agronomy Profile</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-5">
+                <img src="https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?auto=format&fit=crop&w=600&q=80" class="img-fluid rounded" alt="Rice field">
+                <div class="mt-3 p-3 bg-light rounded small">
+                  <strong>Nutrition & Market Value:</strong><br>
+                  78% complex carbohydrates, 7-8% plant protein. Global food security commodity with expanding markets for aromatic Basmati and red heirloom varieties.
+                </div>
+              </div>
+              <div class="col-md-7">
+                <h6 class="fw-bold text-agri-forest">Cultivation Protocols:</h6>
+                <p class="small text-secondary">Puddled soil transplanting or Direct Seeded Rice (DSR). Seed rate: 20-25 kg/ha for line transplanting; 12-15 kg/ha for hybrid varieties.</p>
+                
+                <h6 class="fw-bold text-agri-forest">Soil & Hydrology Requirements:</h6>
+                <p class="small text-secondary">Impermeable subsoil clay with heavy water retention. Needs 1100-1500 mm water through crop cycle. Soil pH must be maintained between 5.5 and 6.5.</p>
+
+                <h6 class="fw-bold text-agri-forest">Harvesting & Post-Harvest Operations:</h6>
+                <p class="small text-secondary">Harvest when panicles turn straw colored. Thresh and sun dry on clean tarpaulins until moisture reaches 12-14% to prevent Aspergillus mold contamination during storage.</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="wheatModal" tabindex="-1" aria-labelledby="wheatModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-agri-dark text-white">
+            <h5 class="modal-title fw-bold" id="wheatModalLabel"><i class="bi bi-info-circle me-2"></i> Wheat Agronomy Profile</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-5">
+                <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=600&q=80" class="img-fluid rounded" alt="Wheat crop">
+                <div class="mt-3 p-3 bg-light rounded small">
+                  <strong>Nutrition & Uses:</strong><br>
+                  High gluten protein (11-14%), essential dietary fiber, B-vitamins. Used in milling, pasta, bread-making, and commercial confectionery.
+                </div>
+              </div>
+              <div class="col-md-7">
+                <h6 class="fw-bold text-agri-forest">Cultivation & Seeding:</h6>
+                <p class="small text-secondary">Seed rate: 100 kg/ha for normal sowing; 125 kg/ha for late broadcast. Depth: 4-5 cm. Optimum night temperature is 10-15°C for tillering.</p>
+                <h6 class="fw-bold text-agri-forest">Soil & Nutrient Demands:</h6>
+                <p class="small text-secondary">Fertile, neutral loams (pH 6.0 - 7.5). Recommended standard N:P:K ratio is 120:60:40 kg/ha with half nitrogen split at CRI stage.</p>
+                <h6 class="fw-bold text-agri-forest">Harvesting:</h6>
+                <p class="small text-secondary">Combine harvester or hand sickle when grain makes a crisp cracking sound between teeth. Clean and store in sealed metal bins.</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="maizeModal" tabindex="-1" aria-labelledby="maizeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-agri-dark text-white">
+            <h5 class="modal-title fw-bold" id="maizeModalLabel"><i class="bi bi-info-circle me-2"></i> Maize Profile</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-5">
+                <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=600&q=80" class="img-fluid rounded" alt="Corn">
+              </div>
+              <div class="col-md-7">
+                <h6 class="fw-bold text-agri-forest">Agro-Ecological Specifications:</h6>
+                <p class="small text-secondary">Optimal temperature: 21-27°C. Seed rate: 20 kg/ha for grain; 40 kg/ha for fodder. Sensitive to waterlogging; raised beds are strictly advised.</p>
+                <h6 class="fw-bold text-agri-forest">Market Value:</h6>
+                <p class="small text-secondary">Crucial feedstock for poultry, animal feed, corn starch, ethanol, and high-fructose corn syrup production.</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="tomatoModal" tabindex="-1" aria-labelledby="tomatoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-agri-dark text-white">
+            <h5 class="modal-title fw-bold" id="tomatoModalLabel"><i class="bi bi-info-circle me-2"></i> Tomato Cultivation Profile</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-5">
+                <img src="https://images.unsplash.com/photo-1592417817098-8f3d6910985b?auto=format&fit=crop&w=600&q=80" class="img-fluid rounded" alt="Tomato">
+              </div>
+              <div class="col-md-7">
+                <h6 class="fw-bold text-agri-forest">Growth & Yield Highlights:</h6>
+                <p class="small text-secondary">Requires staking with bamboo poles and trellising wires for indeterminate vines. High lycopene and vitamin C source. Yield reaches 50-80 tons/ha under greenhouse or mulched drip systems.</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="potatoModal" tabindex="-1" aria-labelledby="potatoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-agri-dark text-white">
+            <h5 class="modal-title fw-bold" id="potatoModalLabel"><i class="bi bi-info-circle me-2"></i> Potato Cultivation Profile</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-5">
+                <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=600&q=80" class="img-fluid rounded" alt="Potato">
+              </div>
+              <div class="col-md-7">
+                <h6 class="fw-bold text-agri-forest">Tuberization Biology:</h6>
+                <p class="small text-secondary">Optimal night temperature for tuber initiation is 16-20°C. Ridge earthing-up is performed 30 days after sowing to prevent solanine greening in exposed tubers.</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="spinachModal" tabindex="-1" aria-labelledby="spinachModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-agri-dark text-white">
+            <h5 class="modal-title fw-bold" id="spinachModalLabel"><i class="bi bi-info-circle me-2"></i> Spinach & Leafy Greens Profile</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-5">
+                <img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=600&q=80" class="img-fluid rounded" alt="Spinach">
+              </div>
+              <div class="col-md-7">
+                <h6 class="fw-bold text-agri-forest">Nutritional Profile & Fast Cycle:</h6>
+                <p class="small text-secondary">Rich in iron, carotenoids, and folate. Requires short growing cycles (35-45 days), enabling up to 4 successional plantings per season.</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="mangoModal" tabindex="-1" aria-labelledby="mangoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-agri-dark text-white">
+            <h5 class="modal-title fw-bold" id="mangoModalLabel"><i class="bi bi-info-circle me-2"></i> Mango Orchard Profile</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-5">
+                <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=600&q=80" class="img-fluid rounded" alt="Mango">
+              </div>
+              <div class="col-md-7">
+                <h6 class="fw-bold text-agri-forest">Orchard Maintenance:</h6>
+                <p class="small text-secondary">Canopy pruning post-harvest encourages lateral productive flushes. Requires blossom protection against powdery mildew and mango hoppers during spring.</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="citrusModal" tabindex="-1" aria-labelledby="citrusModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-agri-dark text-white">
+            <h5 class="modal-title fw-bold" id="citrusModalLabel"><i class="bi bi-info-circle me-2"></i> Citrus Cultivation Profile</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-5">
+                <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?auto=format&fit=crop&w=600&q=80" class="img-fluid rounded" alt="Citrus">
+              </div>
+              <div class="col-md-7">
+                <h6 class="fw-bold text-agri-forest">Rootstock & Citrus Greening Defense:</h6>
+                <p class="small text-secondary">Grafted onto disease-resistant rootstocks (Rough Lemon or Rangpur Lime). Routine psyllid surveillance is mandatory to stop Citrus Greening (Huanglongbing) vector transmission.</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="bananaModal" tabindex="-1" aria-labelledby="bananaModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-agri-dark text-white">
+            <h5 class="modal-title fw-bold" id="bananaModalLabel"><i class="bi bi-info-circle me-2"></i> Banana Cultivation Profile</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-5">
+                <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=600&q=80" class="img-fluid rounded" alt="Banana">
+              </div>
+              <div class="col-md-7">
+                <h6 class="fw-bold text-agri-forest">High Density Plantation:</h6>
+                <p class="small text-secondary">Spacing of 1.8m x 1.8m produces over 3,000 plants per hectare. Continuous organic mulching around pseudostems retains essential root moisture.</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="cottonModal" tabindex="-1" aria-labelledby="cottonModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-agri-dark text-white">
+            <h5 class="modal-title fw-bold" id="cottonModalLabel"><i class="bi bi-info-circle me-2"></i> Cotton Agronomy Profile</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-5">
+                <img src="https://images.unsplash.com/photo-1606041008023-472dfb5e530f?auto=format&fit=crop&w=600&q=80" class="img-fluid rounded" alt="Cotton">
+              </div>
+              <div class="col-md-7">
+                <h6 class="fw-bold text-agri-forest">Fiber Technology & Boll Care:</h6>
+                <p class="small text-secondary">Requires warm days and dry harvest windows. Pheromone traps monitor pink bollworm populations, preserving fiber lint quality.</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="juteModal" tabindex="-1" aria-labelledby="juteModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-agri-dark text-white">
+            <h5 class="modal-title fw-bold" id="juteModalLabel"><i class="bi bi-info-circle me-2"></i> Jute Fiber Profile</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-5">
+                <img src="https://images.unsplash.com/photo-1527842891421-42eec6e703ea?auto=format&fit=crop&w=600&q=80" class="img-fluid rounded" alt="Jute">
+              </div>
+              <div class="col-md-7">
+                <h6 class="fw-bold text-agri-forest">Fiber Retting Science:</h6>
+                <p class="small text-secondary">Bundled stems are submerged in water for biological pectin dissolution (retting) over 12-15 days, resulting in lustrous golden bast fiber.</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="sugarcaneModal" tabindex="-1" aria-labelledby="sugarcaneModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-agri-dark text-white">
+            <h5 class="modal-title fw-bold" id="sugarcaneModalLabel"><i class="bi bi-info-circle me-2"></i> Sugarcane Profile</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-5">
+                <img src="https://images.unsplash.com/photo-1543884846-601264b3ef13?auto=format&fit=crop&w=600&q=80" class="img-fluid rounded" alt="Sugarcane">
+              </div>
+              <div class="col-md-7">
+                <h6 class="fw-bold text-agri-forest">Sett Planting & Ratoon Crop:</h6>
+                <p class="small text-secondary">Three-bud setts treated with fungicide are planted in furrows. Ratooning allows up to two subsequent annual harvests without replanting.</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-4 border-top">
+    <div class="container text-center">
+      <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+        <i class="bi bi-flower1 fs-4 text-warning"></i>
+        <span class="fw-bold fs-5 text-white">AgriHub</span>
+      </div>
+      <p class="text-white-50 small mb-3">Empowering sustainable agricultural communities through accessible agronomic intelligence, verified field guides, and integrated crop protection systems.</p>
+      <div class="d-flex justify-content-center gap-3 small mb-3">
+        <a href="index.html">Home</a>
+        <span class="text-white-50">|</span>
+        <a href="guides.html">Farming Guides</a>
+        <span class="text-white-50">|</span>
+        <a href="crops.html">Crop Details</a>
+        <span class="text-white-50">|</span>
+        <a href="pests.html">Pest Strategies</a>
+        <span class="text-white-50">|</span>
+        <a href="contact.html">Consultation</a>
+      </div>
+      <p class="text-white-50 small mb-0">&copy; 2026 AgriHub - Agricultural Information Hub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriHub - Agricultural Information Hub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-agri-dark py-3">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <i class="bi bi-flower1 fs-3 text-warning"></i>
+          <span>AgriHub</span>
+        </a>
+        <div class="d-none d-lg-block text-white-50 small ms-3">
+          <i class="bi bi-clock me-1"></i>
+          <span id="currentTimeBadge" class="badge bg-agri-forest text-light">Loading...</span>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="guides.html">Farming Guides</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="crops.html">Crop Details</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pests.html">Pest Control</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact & Extension</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section text-center text-md-start">
+      <div class="container py-4">
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill text-uppercase fw-bold mb-3">Sustainable Modern Farming</span>
+            <h1 class="display-4 fw-bold mb-3">Empowering Growers with Science & Field Wisdom</h1>
+            <p class="lead mb-4 text-light">Access comprehensive crop cultivation protocols, verified IPM pest defense guides, and season-specific agro-advisories engineered for resilient yields.</p>
+            <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start">
+              <a href="guides.html" class="btn btn-agri btn-lg px-4">Browse Farming Guides</a>
+              <a href="crops.html" class="btn btn-earth btn-lg px-4">Explore Crop Profiles</a>
+              <a href="pests.html" class="btn btn-outline-light btn-lg px-4">Pest Management</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-white">
+      <div class="container py-3">
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-lg-8">
+            <h2 class="fw-bold text-agri-dark">Your Central Resource for Agricultural Excellence</h2>
+            <p class="text-secondary lead">AgriHub connects smallholders, commercial growers, and horticulture enthusiasts with peer-reviewed agronomy data, sustainable inputs, and prompt extension support.</p>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 p-4 border-0 shadow-sm bg-agri-cream">
+              <div class="text-agri-forest mb-3">
+                <i class="bi bi-book fs-1"></i>
+              </div>
+              <h4 class="fw-bold text-agri-dark">Practical Field Guides</h4>
+              <p class="text-secondary mb-0">From soil conditioning to drip irrigation calibration, master end-to-end best practices for Kharif, Rabi, and summer cultivation cycles.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 p-4 border-0 shadow-sm bg-agri-cream">
+              <div class="text-agri-forest mb-3">
+                <i class="bi bi-patch-check fs-1"></i>
+              </div>
+              <h4 class="fw-bold text-agri-dark">Crop Specifications</h4>
+              <p class="text-secondary mb-0">Discover climate tolerances, optimal pH windows, seed rates, and harvesting benchmarks for grains, fruits, vegetables, and commercial cash crops.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 p-4 border-0 shadow-sm bg-agri-cream">
+              <div class="text-agri-forest mb-3">
+                <i class="bi bi-shield-check fs-1"></i>
+              </div>
+              <h4 class="fw-bold text-agri-dark">Integrated Pest Control</h4>
+              <p class="text-secondary mb-0">Safeguard agro-ecosystems with biological predators, early scouting checklists, and targeted organic preparations that preserve beneficial soil biomes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-light">
+      <div class="container py-3">
+        <div class="d-flex justify-content-between align-items-end mb-4">
+          <div>
+            <span class="text-agri-earth fw-bold text-uppercase small">Field Highlights</span>
+            <h2 class="fw-bold text-agri-dark mb-0">Featured Resources & Guides</h2>
+          </div>
+          <a href="guides.html" class="btn btn-outline-agri btn-sm">View All Guides <i class="bi bi-arrow-right"></i></a>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Wheat field harvest">
+              <div class="card-body d-flex flex-column">
+                <div class="mb-2">
+                  <span class="badge badge-agri-type me-1">Grains</span>
+                  <span class="badge badge-agri-season">Rabi/Winter</span>
+                </div>
+                <h5 class="card-title fw-bold text-agri-dark">Optimized Wheat Cultivation</h5>
+                <p class="card-text text-secondary flex-grow-1">Learn seed bed preparation, balanced NPK fertilization, and crucial crown-root initiation irrigation scheduling.</p>
+                <a href="guides.html" class="btn btn-outline-agri btn-sm align-self-start mt-2">Read Full Guide</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1592417817098-8f3d6910985b?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Ripe tomatoes on vine">
+              <div class="card-body d-flex flex-column">
+                <div class="mb-2">
+                  <span class="badge badge-agri-type me-1">Vegetables</span>
+                  <span class="badge badge-agri-method">Drip Irrigation</span>
+                </div>
+                <h5 class="card-title fw-bold text-agri-dark">Precision Drip Farming for Tomatoes</h5>
+                <p class="card-text text-secondary flex-grow-1">Improve water conservation by up to 45% while eliminating moisture-borne fungal diseases through direct-root fertigation.</p>
+                <a href="guides.html" class="btn btn-outline-agri btn-sm align-self-start mt-2">Read Full Guide</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Ladybug pest predator on plant">
+              <div class="card-body d-flex flex-column">
+                <div class="mb-2">
+                  <span class="badge bg-warning-subtle text-warning-emphasis me-1">IPM</span>
+                  <span class="badge badge-agri-method">Biological Control</span>
+                </div>
+                <h5 class="card-title fw-bold text-agri-dark">Beneficial Insect Management</h5>
+                <p class="card-text text-secondary flex-grow-1">Deploy ladybird beetles and hoverflies to control aphid outbreaks without relying on broad-spectrum synthetic sprays.</p>
+                <a href="pests.html" class="btn btn-outline-agri btn-sm align-self-start mt-2">Explore Tactics</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-agri-forest text-white">
+      <div class="container text-center py-3">
+        <h3 class="fw-bold mb-3">Need Direct Advice from Agricultural Officers?</h3>
+        <p class="lead mb-4 text-white-50 mx-auto" style="max-width: 650px;">Submit plant health samples or inquiries directly to our regional agronomy experts and emergency pest helpline.</p>
+        <a href="contact.html" class="btn btn-warning btn-lg fw-bold px-4">Contact Extension Services</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-4 border-top">
+    <div class="container text-center">
+      <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+        <i class="bi bi-flower1 fs-4 text-warning"></i>
+        <span class="fw-bold fs-5 text-white">AgriHub</span>
+      </div>
+      <p class="text-white-50 small mb-3">Empowering sustainable agricultural communities through accessible agronomic intelligence, verified field guides, and integrated crop protection systems.</p>
+      <div class="d-flex justify-content-center gap-3 small mb-3">
+        <a href="index.html">Home</a>
+        <span class="text-white-50">|</span>
+        <a href="guides.html">Farming Guides</a>
+        <span class="text-white-50">|</span>
+        <a href="crops.html">Crop Details</a>
+        <span class="text-white-50">|</span>
+        <a href="pests.html">Pest Strategies</a>
+        <span class="text-white-50">|</span>
+        <a href="contact.html">Consultation</a>
+      </div>
+      <p class="text-white-50 small mb-0">&copy; 2026 AgriHub - Agricultural Information Hub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
